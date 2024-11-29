@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { IoMdArrowDown } from "react-icons/io";
-import FlipClock from "@/components/CountDown/CountDown";
+import FlipClock from "@/components/CountDown/CountDown.jsx";
 import { BiSolidSchool } from "react-icons/bi";
 import { MdCalendarMonth, MdPhoneInTalk, MdEmail } from "react-icons/md";
-import ButtonCT from '@/components/ButtonCT';
+import ButtonCT from '@/components/ButtonCT.jsx';
 import { IoLocationSharp, IoEarth } from "react-icons/io5";
-import WishesSlider from "@/components/WishersSlider/WishersSlider";
-import Carousel from "@/components/Carousel/Carousel";
+import WishesSlider from "@/components/WishersSlider/WishersSlider.jsx";
+import Carousel from "@/components/Carousel/Carousel.jsx";
 import toast from 'react-hot-toast';
 
 import qr_code from "@/assets/qr_fanpage_linkedin.png"
