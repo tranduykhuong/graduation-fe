@@ -1,0 +1,19 @@
+{
+	"builds": [
+	  {
+		"src": "index.html",
+		"use": "@vercel/static",
+		"config": {
+			"buildCommand": "yarn build",
+			"outputDirectory": "dist"
+		}
+	  }
+	],
+	"redirects": [
+	  {
+		"source": "/:path*",
+		"destination": "/",
+		"permanent": false
+	  }
+	]
+  }
