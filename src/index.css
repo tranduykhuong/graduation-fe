@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Style+Script&family=Voltaire&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Style+Script&family=Voltaire&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  font-family: "Work Sans", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  word-spacing: 1px;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+/* HTML: <div class="loader"></div> */
+/* .loader {
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    linear-gradient(#ED303C 0 0),
+    linear-gradient(#ED303C 0 0),
+    linear-gradient(#3B8183 0 0),
+    linear-gradient(#3B8183 0 0),
+    linear-gradient(#FAD089 0 0),
+    linear-gradient(#FAD089 0 0),
+    linear-gradient(#FF9C5B 0 0),
+    linear-gradient(#FF9C5B 0 0),
+    #ED303C;
+  background-position: top left,bottom right;
+  background-repeat: no-repeat;
+  animation: l6 2.5s infinite;
+}
+@keyframes l6 {
+  0%   {background-size: 0   100%,0   100%,100% 0  ,100% 0  ,0   100%,0   100%,100% 0  ,100% 0  }
+  20%,
+  25%  {background-size: 0   100%,0   100%,100% 0  ,100% 0  ,0   100%,0   100%,100% 50%,100% 50%}
+  45%,
+  50%  {background-size: 0   100%,0   100%,100% 0  ,100% 0  ,50% 100%,50% 100%,100% 50%,100% 50%}
+  70%,
+  75%  {background-size: 0   100%,0   100%,100% 50%,100% 50%,50% 100%,50% 100%,100% 50%,100% 50%}
+  95%,
+  100% {background-size: 50% 100%,50% 100%,100% 50%,100% 50%,50% 100%,50% 100%,100% 50%,100% 50%}
+} */
+
+/* HTML: <div class="loader"></div> */
+/* .loader {
+  width: calc(6*30px);
+  height: 50px;
+  display: flex;
+  color: #8d7958;
+  filter: drop-shadow(30px 25px 0 currentColor) drop-shadow(60px 0 0 currentColor) drop-shadow(120px 0 0 currentColor);
+  clip-path: inset(0 100% 0 0);
+  animation: l12 2s infinite steps(7);
+}
+.loader:before {
+  content: "";
+  width: 30px;
+  height: 25px;
+  --c:no-repeat radial-gradient(farthest-side,currentColor 92%,#0000);
+  background:
+    var(--c) left /70% 70%,
+    var(--c) right/20% 20%,
+    var(--c) top    0 right 15%/20% 20%,
+    var(--c) bottom 0 right 15%/20% 20%;
+}
+@keyframes l12 {
+  100% {clip-path: inset(0 -30px 0 0)}
+} */
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  display: inline-grid;
+  width: 80px;
+  aspect-ratio: 1;
+}
+.loader:before,
+.loader:after {
+  content:"";
+  grid-area: 1/1;
+  border-radius: 50%;
+  animation: l3-0 2s alternate infinite ease-in-out;
+}
+.loader:before {
+  margin: 25%;
+  background: repeating-conic-gradient(#27c595e0 0 60deg,#0B486B 0 120deg);
+  translate: 0 50%;
+  rotate: -150deg;
+}
+.loader:after {
+  padding: 10%;
+  margin: -10%;
+  background: repeating-conic-gradient(#0B486B 0 30deg,#27c595e0 0 60deg);
+  mask:linear-gradient(#0000 50%,#000 0) content-box exclude,linear-gradient(#0000 50%,#000 0);
+  rotate: -75deg;
+  animation-name: l3-1;
+}
+@keyframes l3-0 {to{rotate: 150deg}}
+@keyframes l3-1 {to{rotate:  75deg}}
