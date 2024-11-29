@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IoMdArrowDown } from "react-icons/io";
-import FlipClock from "@/components/CountDown/CountDown";
+import FlipClock from "@/components/Countdown/Countdown";
 import { BiSolidSchool } from "react-icons/bi";
 import { MdCalendarMonth, MdPhoneInTalk, MdEmail } from "react-icons/md";
 import ButtonCT from '@/components/ButtonCT';
