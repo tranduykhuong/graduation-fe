@@ -1,19 +1,18 @@
 {
-	"version": 2,
 	"builds": [
 	  {
 		"src": "index.html",
-		"use": "@vercel/static-build",
+		"use": "@vercel/static",
 		"config": {
-		  "buildCommand": "yarn build",
-		  "outputDirectory": "dist"
+			"buildCommand": "yarn build",
+			"outputDirectory": "dist"
 		}
 	  }
 	],
 	"routes": [
-	  {
-		"src": "/(.*)",
-		"dest": "/index.html"
-	  }
-	]
-  }
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
