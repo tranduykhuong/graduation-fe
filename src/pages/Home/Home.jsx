@@ -445,7 +445,7 @@ const Home = () => {
 											onChange={handleChange}
 											className="text-blue-600 focus:ring focus:ring-green-300"
 										/>
-										<span className="text-gray-700">Có thể đến</span>
+										<span className="text-gray-700">Sẽ đến</span>
 									</label>
 								</div>
 								<div className="mb-2">
