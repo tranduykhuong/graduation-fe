@@ -2,5 +2,5 @@
 	"rewrites": [
 	  { "source": "/(.*)", "destination": "/" }
 	],
-	"outputDirectory": "build"
+	"outputDirectory": "dist"
   }
