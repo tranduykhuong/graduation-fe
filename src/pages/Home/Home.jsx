@@ -211,9 +211,10 @@ const Home = () => {
 						></div>
 					</div>
 
-					<div className="animate-bounce absolute bottom-[45px] left-[calc(50%-30px)] w-[60px] h-[60px] cursor-pointer bg-[rgba(80,80,80,0.5)] rounded-full transform">
+					<div className="animate-bounce absolute bottom-[120px] left-[calc(50%-30px)] w-[80px] h-[80px] cursor-pointer bg-[rgba(80,80,80,0.7)] rounded-full transform">
 						<a href="#next" onClick={handleScroll}>
-							<IoMdArrowDown className="text-3xl text-white absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" />
+							{/* <IoMdArrowDown className="text-3xl text-white absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" /> */}
+							<span className="text-white w-[30px] h-[43px] mt-[14px] block m-auto">Bắt đầu</span>
 						</a>
 					</div>
 				</div>
