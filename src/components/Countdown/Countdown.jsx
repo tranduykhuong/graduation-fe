@@ -74,7 +74,7 @@ const FlipClock = () => {
 			const difference = targetDate - currentDate;
 
 			const months = Math.floor(difference / (1000 * 60 * 60 * 24 * 30.44));
-			const days = Math.floor((difference / (1000 * 60 * 60 * 24)) % 30);
+			const days = Math.floor((difference / (1000 * 60 * 60 * 24)) % 30) - 1;
 			const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
 			const minutes = Math.floor((difference / (1000 * 60)) % 60);
 			const seconds = Math.floor((difference / 1000) % 60);

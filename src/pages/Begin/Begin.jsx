@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PopupModal from '@/components/PopupModal'
 import InputCT from '@/components/InputCT'
 import ButtonCT from '@/components/ButtonCT'
@@ -128,6 +128,29 @@ const Begin = () => {
     }
   }, [])
 
+
+  const audioRef = useRef(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    const enableAudio = () => {
+      audio.muted = false;
+      audioRef.current.volume = "0.4"
+      audio.play().catch((error) => console.log("Auto play error:", error));
+
+
+      document.removeEventListener("scroll", enableAudio);
+    };
+
+    // Lắng nghe sự kiện click hoặc scroll
+    document.addEventListener("click", enableAudio);
+
+    return () => {
+      document.removeEventListener("click", enableAudio);
+    };
+  }, []);
+
 	return (
 		<div className='min-h-[100vh] relative'>
       <Toaster />
@@ -215,6 +238,13 @@ const Begin = () => {
       ) : (
         <Home />
       )}
+
+      <audio ref={audioRef} muted loop>
+        <source
+          src="https://firebasestorage.googleapis.com/v0/b/gokag-19eac.appspot.com/o/lingobot%2Fnhac.mp3?alt=media"
+          type="audio/mpeg"
+        />
+      </audio>
     </div>
 	);
 }
