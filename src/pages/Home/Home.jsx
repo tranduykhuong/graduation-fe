@@ -75,7 +75,9 @@ const Home = () => {
       }
       const data = await response.json();
       console.log('Fetched List data:', data);
-			setReviews(data.data)
+
+			const filteredData = data.data.filter(item => item.wisher);
+			setReviews(filteredData)
     } catch (error) {
       console.error('Error fetching data:', error);
       return
@@ -211,7 +213,7 @@ const Home = () => {
 						></div>
 					</div>
 
-					<div className="animate-bounce absolute bottom-[120px] left-[calc(50%-30px)] w-[80px] h-[80px] cursor-pointer bg-[rgba(80,80,80,0.7)] rounded-full transform">
+					<div className="animate-bounce absolute bottom-[70px] left-[calc(50%-30px)] w-[80px] h-[80px] cursor-pointer bg-[rgba(80,80,80,0.7)] rounded-full transform">
 						<a href="#next" onClick={handleScroll}>
 							{/* <IoMdArrowDown className="text-3xl text-white absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2" /> */}
 							<span className="text-white w-[30px] h-[43px] mt-[14px] block m-auto">Bắt đầu</span>
@@ -286,10 +288,10 @@ const Home = () => {
 							<FadeInOnScroll>
 								<div className="flex gap-5 items-center font-stylescript text-2xl lg:text-3xl text-[#232323] mb-2">
 									<BiSolidSchool className="text-4xl lg:text-3xl" />
-									<p>Giảng đường 1 - Trường Đại học Khoa học Tự nhiên (Cơ sở 1)</p>
+									<p>Trường Đại học Khoa học Tự nhiên (Cơ sở 1)</p>
 								</div>
 								<div className="flex gap-4 items-center font-worksans text-xl text-[#232323]">
-									<p className="pl-[50px] text-base lg:text-xl text-[#767676]">227 Đ. Nguyễn Văn Cừ, Phường 4, Quận 5, Hồ Chí Minh, Việt Nam</p>
+									<p className="pl-[50px] text-base lg:text-xl text-[#767676]">227 Đ. Nguyễn Văn Cừ, Phường 4, Quận 5, Hồ Chí Minh</p>
 								</div>
 								<br />
 								<br />

@@ -137,7 +137,7 @@ const Begin = () => {
 
     const enableAudio = () => {
       audio.muted = false;
-      audioRef.current.volume = "0.4"
+      audioRef.current.volume = "0.6"
       audio.play().catch((error) => console.log("Auto play error:", error));
 
 
