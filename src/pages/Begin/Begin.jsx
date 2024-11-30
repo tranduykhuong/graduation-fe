@@ -14,6 +14,7 @@ const Begin = () => {
   const [email, setEmail] = useState('')
   const [relationship, setRelationship] = useState('')
 
+  const [oldData, setOldData] = useState(false)
   const [path, setPath] = useState('/')
   const [isOpenModal, setIsOpenModal] = useState(false)
   const [isOpenReset, setIsOpenReset] = useState(false)
@@ -94,10 +95,10 @@ const Begin = () => {
         return
       }
       const data = await response.json();
-      console.log('Fetched data:', data);
       setName(data.data.name)
       setLast3phone(data.data.last3phone)
       setRelationship(data.data.relationship)
+      setOldData(true)
     } catch (error) {
       console.error('Error fetching data:', error);
       return
@@ -183,7 +184,7 @@ const Begin = () => {
           <PopupModal
             title="Xin chào"
           >
-            <p className='text-base pt-8 pb-8 text-[#27c595e0]'>Chào bạn, mình là <strong>Trợ lý Ekila</strong>. Trước khi xem trang đỉnh nóc, kịch trần thì cho mình xin xíu thông tin nha!</p>
+            <p className='text-base pt-8 pb-8 text-[#27c595e0]'>Chào bạn, mình là <strong>Trợ lý Ekila</strong>. {oldData ? <span className='text-[#f98344e0]'>Dưới đây là thông tin của bạn đúng không, nếu không hãy Nhấn vào nút Tạo mới nhé!</span> : "Trước khi xem trang đỉnh nóc, kịch trần thì cho mình xin xíu thông tin nha!"}</p>
 
             <div className='absolute top-1 right-2 md:-right-5 md:-top-20'>
               <img className='h-[90px] md:h-40' src='https://firebasestorage.googleapis.com/v0/b/gokag-19eac.appspot.com/o/lingobot%2Fbot.png?alt=media' />
