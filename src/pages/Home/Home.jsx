@@ -89,25 +89,43 @@ const Home = () => {
   };
 
 	const handleImageChange = (event) => {
-		const file = event.target.files[0];
-		if (file) {
-			const reader = new FileReader();
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
 
-			reader.onload = () => {
-				const base64String = reader.result.split(',')[1];
-				setSelectedImage({
-					url: URL.createObjectURL(file),
-					base64: base64String,
-				});
-			};
+        reader.onload = (e) => {
+            const img = new Image();
+            img.src = e.target.result;
 
-			reader.onerror = (error) => {
-				console.error('Error converting image to Base64:', error);
-			};
+            img.onload = () => {
+                // Giữ nguyên kích thước gốc
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
 
-			reader.readAsDataURL(file);
-		}
-	};
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, img.width, img.height);
+
+                // Chuyển đổi Canvas về Base64 với chất lượng thấp hơn
+                const base64String = canvas.toDataURL('image/jpeg', 0.8); // Giảm chất lượng nếu cần (0.8 là chất lượng 80%)
+                setSelectedImage({
+                    url: URL.createObjectURL(file),
+                    base64: base64String.split(',')[1],
+                });
+            };
+
+            img.onerror = (error) => {
+                console.error('Error loading image:', error);
+            };
+        };
+
+        reader.onerror = (error) => {
+            console.error('Error reading file:', error);
+        };
+
+        reader.readAsDataURL(file);
+    }
+};
 
 	const handleScroll = (event) => {
     event.preventDefault();
