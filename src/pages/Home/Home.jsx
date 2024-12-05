@@ -107,7 +107,7 @@ const Home = () => {
                 ctx.drawImage(img, 0, 0, img.width, img.height);
 
                 // Chuyển đổi Canvas về Base64 với chất lượng thấp hơn
-                const base64String = canvas.toDataURL('image/jpeg', 0.6); 
+                const base64String = canvas.toDataURL('image/jpeg', 0.2);
                 setSelectedImage({
                     url: URL.createObjectURL(file),
                     base64: base64String.split(',')[1],
